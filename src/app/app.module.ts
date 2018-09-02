@@ -15,6 +15,8 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -24,12 +26,21 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MatInputModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material';
+
+
+
 
 //Components
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
 @NgModule({
@@ -37,7 +48,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppComponent,
     LoginFormComponent,
     DashboardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SettingsComponent,
+    ToolbarComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -52,10 +65,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+    AngularFireDatabaseModule,
     // Material Modules
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

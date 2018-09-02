@@ -1,0 +1,47 @@
+
+
+
+<mat-card id="changeDisplayNameCard">
+    <mat-card-header>
+        <mat-card-title class="cardHeading">Change Display Name</mat-card-title>
+    </mat-card-header> 
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput placeholder="Enter Name" type="text" [(ngModel)]="newName">
+        </mat-form-field><br>
+        <button mat-raised-button color="primary" (click)="changeName()">Change Name</button>
+        
+    </mat-card-content>
+</mat-card>
+<mat-card id="changeDisplayNameCard">
+        <mat-card-header>
+            <mat-card-title class="cardHeading">Change Profile Picture</mat-card-title>
+        </mat-card-header>
+        <mat-spinner class = "spinner" strokeWidth="2" [diameter]="40" *ngIf = "showImageLoader"></mat-spinner>
+        <div class="imageContainer">
+            <img mat-card-image [src]="userPicture | async"  *ngIf = "!showImageLoader">
+        </div>
+        <mat-card-content>
+            
+            <input  placeholder="Upload File" type="file" (change)="onFileChange($event)">
+            
+            <button mat-raised-button color="primary" (click)="changePicture()">Change Picture</button>
+            
+        </mat-card-content>
+</mat-card>
+<mat-card id="changeDisplayNameCard">
+    <mat-card-header>
+        <mat-card-title class="cardHeading">Change Password</mat-card-title>
+    </mat-card-header> 
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput placeholder="Enter new Password" type="text" [(ngModel)]="newPass1">
+        </mat-form-field><br>
+        <mat-form-field>
+            <input matInput placeholder="Enter new Password Again" type="text" [(ngModel)]="newPass2">
+        </mat-form-field><br>
+            <button mat-raised-button color="primary" (click)="changePass()">Change Password</button>
+    </mat-card-content>
+</mat-card>  
+
+    

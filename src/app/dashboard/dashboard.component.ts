@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -8,19 +11,11 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private afAuth: AngularFireAuth) { }
-  username;
+  constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase) { }
+  
   ngOnInit() {
-    this.afAuth.user.subscribe(user => {
-      this.username = user.email;
-    });
+  
     
-  }
-  logout() {
-    this.afAuth.auth.signOut();
-    this.afAuth.user.subscribe(user => {
-      console.log(user);
-    });
   }
 
 }

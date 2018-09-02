@@ -1,0 +1,21 @@
+#changeDisplayNameCard{
+    display: inline-block;
+    width:200px;
+    padding: 60px 30px;
+    margin: 30px;
+    text-align: center;
+}
+.cardHeading{
+    font-size: 20px;
+}
+.spinner{
+    margin:50px auto;
+}
+.imageContainer{
+    height:200px;
+    width: 200px;
+    overflow: hidden;
+}
+.imageContainer img {
+    width:200px;
+}

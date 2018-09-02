@@ -1,6 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
+    <mat-sidenav-content>
+        <app-toolbar [showBackArrow] = "showBackArrow" [hideToolbar] = "hideToolbar"></app-toolbar>
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
 
 

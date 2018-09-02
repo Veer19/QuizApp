@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Router, Event, NavigationEnd} from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TechVista-Quiz';
+  showBackArrow: boolean;
+  hideToolbar: boolean;
+  constructor(private router: Router){
+    this.router.events.subscribe((event:Event) => {
+
+      if (event instanceof NavigationEnd) {
+        this.showBackArrow = (router.url!="/dashboard");
+        this.hideToolbar = (router.url=="/")
+      }
+
+    })
+  }
 }

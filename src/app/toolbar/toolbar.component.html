@@ -1,0 +1,14 @@
+<!--<mat-spinner *ngIf = "!userExists" class="spinner"></mat-spinner>-->
+
+<mat-toolbar color="primary" *ngIf = "!hideToolbar">
+  
+    <mat-icon class="icon" *ngIf = "showBackArrow" routerLink="/dashboard">keyboard_backspace</mat-icon>
+    <span>Welcome {{username}}!</span>
+  
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+
+    <!-- Right Side-->
+    <button mat-raised-button color="primary" routerLink="/settings">Settings</button>
+    <button mat-raised-button color="accent" (click)="logout()">Logout</button>
+  </mat-toolbar>
