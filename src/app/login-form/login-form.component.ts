@@ -19,18 +19,15 @@ export class LoginFormComponent implements OnInit {
     //Firebase Login
     this.afAuth.auth.signInWithEmailAndPassword(email,password)
     .then(user =>{
+
+      // When we have the user object, redirect to the dashboard
       this.router.navigate(['/dashboard']);
     })
     .catch(error=>{
+      // Display Error Message
+      //Put this message into a snackbar later
       console.log(error.message);
     });
     
   }
-  logout() {
-    this.afAuth.auth.signOut();
-    this.afAuth.user.subscribe(user => {
-      console.log(user);
-    });
-  }
-
 }

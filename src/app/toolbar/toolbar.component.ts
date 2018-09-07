@@ -17,22 +17,32 @@ export class ToolbarComponent implements OnInit {
               private db: AngularFireDatabase,
               private router: Router,
               private storage:AngularFireStorage ) { }
+
+  //Class variables
   username;
   userPic;
   userExists:boolean = false;
   userProfile: AngularFireObject<any>;
   userPictureUrl;
   userPicture;
+
+  //Variables from app-component
   @Input() showBackArrow: boolean;
   @Input() hideToolbar: boolean;
+
+
   ngOnInit() {
-    console.log(this.showBackArrow);
-    
+    //Runs on page initialization
+    //Subscribing into the user object to get the UID
     this.afAuth.user.subscribe(user => {
+
+      //Querying the database for userdata corresponding to the UID
       this.userProfile = this.db.object("allUsers/"+user.uid);
       this.userProfile.valueChanges().subscribe(user=>{
         this.username = user.Name;
       });
+
+      //Querying the storage bucket for profile picture
       const ref = this.storage.ref('userPics/'+user.uid);
       this.userPicture = ref.getDownloadURL();
       this.userPicture.subscribe(pic=>{
@@ -42,6 +52,7 @@ export class ToolbarComponent implements OnInit {
     });
   }
   logout() {
+    // Simple logout funtion
     this.afAuth.auth.signOut();
   }
 

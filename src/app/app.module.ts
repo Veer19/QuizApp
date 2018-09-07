@@ -34,7 +34,7 @@ import { MatProgressSpinnerModule } from '@angular/material';
 
 
 
-//Components
+//Importing Components
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';

@@ -14,10 +14,14 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     this.afAuth.authState.subscribe(user=>{
+
+      //Checking if user has logged in
       if(user===null){
+        // If not, redirect to the login page
         return this.router.navigate(['/']);
       }
     });
+    //If yes, allow navigation
     return true;
     
   }

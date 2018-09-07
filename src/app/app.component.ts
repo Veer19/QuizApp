@@ -15,6 +15,7 @@ export class AppComponent {
     this.router.events.subscribe((event:Event) => {
 
       if (event instanceof NavigationEnd) {
+        //Sending these variables to the toolbar component
         this.showBackArrow = (router.url!="/dashboard");
         this.hideToolbar = (router.url=="/")
       }
