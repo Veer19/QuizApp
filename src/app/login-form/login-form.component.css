@@ -1,4 +1,28 @@
 .loginForm{
-    width:300px;
-    margin: auto;
+    width:250px;
+    float: right;
+    margin: 0px 200px;
+    text-align: center;
+    padding:50px 30px 10px 30px;
+    background: #00796B;
+    color: white;
+    margin-top: -100px;
+}
+
+.buttonContainer button{
+    height: 50px;
+    background: #004D40;
+    color: white;
+    
+}
+.forgotContainer{
+    transform: translateY(40px);
+}
+.forgotContainer button {
+    height: 50px;
+    background: #004D40;
+    color: white;
+}
+.btn{
+    margin: 0px 5px;
 }

@@ -30,6 +30,7 @@ import { MatSidenavModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material';
 import { MatIconModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material';
+import { MatSnackBarModule } from '@angular/material';
 
 
 
@@ -41,6 +42,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 
 @NgModule({
@@ -50,7 +53,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     DashboardComponent,
     PageNotFoundComponent,
     SettingsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    QuestionsComponent,
+    LeaderboardComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -73,7 +78,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

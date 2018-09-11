@@ -29,9 +29,18 @@ export class ToolbarComponent implements OnInit {
   //Variables from app-component
   @Input() showBackArrow: boolean;
   @Input() hideToolbar: boolean;
+  navItems = [
+    {label:"Dashboard", link: "/dashboard"},
+    {label:"Questions", link: "/questions"},
+    {label:"Leaderboard", link: "/leaderboard"},
+    {label:"Settings", link: "/settings"},
+  ];
+  
+  
 
 
   ngOnInit() {
+    console.log(this.navItems);
     //Runs on page initialization
     //Subscribing into the user object to get the UID
     this.afAuth.user.subscribe(user => {

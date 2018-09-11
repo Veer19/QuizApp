@@ -1,0 +1,13 @@
+.profileImageContainer{
+    height:300px;
+    width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+    background: #00796B;
+    float: right;
+    margin-right: 100px;
+}
+.profileImageContainer img {
+    width: 100%;
+}

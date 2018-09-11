@@ -11,7 +11,25 @@
           <input matInput placeholder="Password" type="password" class="form-control" id="passoword" name = "password" required  [(ngModel)]="password">
         </mat-form-field>
     </div>
-    <button mat-raised-button color="primary" type="submit"  class="btn btn-success">Submit</button>
+    <br><br>
+    <div class="buttonContainer">
+      
+      <mat-spinner class = "spinner" strokeWidth="4" [diameter]="30" *ngIf = "showLoader"></mat-spinner>
+      <button mat-raised-button  type="submit"  class="btn btn-success"  *ngIf = "!showLoader">Login</button>
+    </div>
+    
   </form>
+  <div class="forgotContainer">
+    <button mat-raised-button  class="btn btn-success" (click)="forgotPasswordWindowIsOpen=true" *ngIf="!forgotPasswordWindowIsOpen">Forgot Password</button>
+    <div class="forgotPasswordWindow" *ngIf="forgotPasswordWindowIsOpen">
+      <mat-form-field>
+        <input matInput placeholder="Enter Email" type="text" class="form-control" id="emailForForgotPass" required  [(ngModel)]="emailForForgotPass">
+      </mat-form-field>
+      <button mat-raised-button  class="btn btn-success" (click)="sendPasswordResetLink(emailForForgotPass)">Send Reset Link</button>
+      <button mat-raised-button  class="btn btn-success" (click)="forgotPasswordWindowIsOpen=false">Cancel</button>
+    </div>
+  </div>
+
+
   
 </mat-card>

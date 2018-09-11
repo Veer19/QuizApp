@@ -9,6 +9,7 @@
     <span class="example-fill-remaining-space"></span>
 
     <!-- Right Side-->
-    <button mat-raised-button color="primary" routerLink="/settings">Settings</button>
+    <button *ngFor="let navItem of navItems" mat-raised-button color="primary"  routerLink="{{navItem.link}}">{{ navItem.label }}</button>      
     <button mat-raised-button color="accent" (click)="logout()">Logout</button>
   </mat-toolbar>
+  
